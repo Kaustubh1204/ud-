@@ -1,0 +1,52 @@
+.bar {
+  background-color: var(--bg);
+  flex-shrink: 0;
+  width: 100%;
+}
+
+/* ── MARQUEE ── */
+.marqueeWrap {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  position: relative;
+  width: 100%;
+}
+
+.marqueeWrap::before,
+.marqueeWrap::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 60px;
+  z-index: 1;
+  pointer-events: none;
+}
+.marqueeWrap::before {
+  left: 0;
+  background: linear-gradient(to right, var(--bg), transparent);
+}
+.marqueeWrap::after {
+  right: 0;
+  background: linear-gradient(to left, var(--bg), transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  padding: 12px 0;
+  animation: marquee 25s linear infinite;
+}
+
+.techItem {
+  font-family: 'Space Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.sep {
+  margin: 0 16px;
+  color: var(--border-sub);
+}
