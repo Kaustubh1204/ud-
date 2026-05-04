@@ -2,8 +2,12 @@
 import React, { useState, useEffect } from "react";
 import styles from "./NavBar.module.css";
 import ThemeToggle from "../ThemeToggle";
+import { usePathname } from "next/navigation";
 
 const NavBar: React.FC = () => {
+  const pathname = usePathname();
+  const isContactPage = pathname === "/contact";
+  
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -49,16 +53,16 @@ const NavBar: React.FC = () => {
           Design. Development. Growth. All under one roof.
         </div>
         <ul className={styles.links} role="list">
-          <li><a href="/"          className={styles.link} id="nav-home">Home</a></li>
+          {!isContactPage && <li><a href="/" className={styles.link} id="nav-home">Home</a></li>}
           <li><a href="/#work"     className={styles.link} id="nav-work">Work</a></li>
           <li><a href="/#services" className={styles.link} id="nav-services">Services</a></li>
           <li>
             <a
-              href="/contact"
+              href={isContactPage ? "/" : "/contact"}
               className={`${styles.link} ${styles.linkContact}`}
-              id="nav-contact"
+              id={isContactPage ? "nav-home-btn" : "nav-contact"}
             >
-              Contact
+              {isContactPage ? "Home" : "Contact"}
             </a>
           </li>
           <li className="ml-4 flex items-center">

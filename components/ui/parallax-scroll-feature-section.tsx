@@ -67,49 +67,37 @@ const ServiceSection = ({ service }: { service: any }) => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionRef.current,
-        start: "top bottom",
-        end: "bottom top",
-        scrub: true,
+        start: "top 85%",
+        end: "bottom 15%",
+        toggleActions: "play none none reverse",
       }
     })
 
     // Text Reveal
     tl.fromTo(textRef.current, 
-      { opacity: 0, y: 100 },
-      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
-    )
-    .to(textRef.current, 
-      { opacity: 0, y: -100, duration: 1, ease: "power2.in" }, 
-      "+=0.5"
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.2, ease: "power4.out" }
     )
 
-    // Video Frame Reveal (Clip Path Animation)
-    const initialClip = service.reverse ? "inset(0 0 0 100%)" : "inset(0 100% 0 0)"
+    // Video Frame Reveal (Premium Curtain Wipe)
+    const initialClip = service.reverse 
+      ? "inset(0% 0% 0% 100%)" 
+      : "inset(0% 100% 0% 0%)"
     
     tl.fromTo(videoRef.current,
       { 
         opacity: 0, 
-        scale: 0.8, 
+        scale: 1.1, 
         clipPath: initialClip 
       },
       { 
         opacity: 1, 
         scale: 1, 
-        clipPath: "inset(0 0% 0 0)", 
-        duration: 1.5, 
-        ease: "power3.inOut" 
+        clipPath: "inset(0% 0% 0% 0%)", 
+        duration: 1.6, 
+        ease: "power4.inOut" 
       },
-      0
-    )
-    .to(videoRef.current,
-      { 
-        opacity: 0, 
-        scale: 1.2, 
-        clipPath: initialClip, 
-        duration: 1.5, 
-        ease: "power3.inOut" 
-      },
-      "+=0.5"
+      "-=0.8"
     )
 
     return () => {
@@ -121,7 +109,7 @@ const ServiceSection = ({ service }: { service: any }) => {
     <div
       ref={sectionRef}
       className={cn(
-        "h-screen flex flex-col md:flex-row items-center justify-center md:gap-32 gap-10 px-6 max-w-7xl mx-auto w-full relative",
+        "min-h-[70vh] py-20 flex flex-col md:flex-row items-center justify-center md:gap-32 gap-10 px-6 max-w-7xl mx-auto w-full relative",
         service.reverse ? 'md:flex-row-reverse' : ''
       )}
     >

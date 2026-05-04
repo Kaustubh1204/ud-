@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { Check } from 'lucide-react';
 
 const outroCardData = [
@@ -71,9 +72,9 @@ export default function OutroCards({ containerRef }: OutroCardsProps) {
                 ))}
               </div>
 
-              <button className="lr-card-cta">
+              <Link href="/contact" className="lr-card-cta">
                 {data.cta}
-              </button>
+              </Link>
             </div>
           </div>
         </div>

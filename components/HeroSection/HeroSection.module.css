@@ -172,17 +172,17 @@
   padding: 13px 26px;
   transition: all 200ms ease;
   white-space: nowrap;
+  border-radius: 100px;
 }
 
 .ctaPrimary {
-  background-color: var(--text);
-  color: var(--bg);
-  border: 1px solid var(--text);
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-sub);
 }
 
 .ctaPrimary:hover {
-  background-color: #2a2a28;
-  border-color: #2a2a28;
+  border-color: var(--text);
 }
 
 .ctaGhost {

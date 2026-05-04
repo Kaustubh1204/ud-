@@ -4,6 +4,8 @@
   width: 100%;
   background-color: var(--bg);
   color: var(--text);
+  position: relative;
+  padding-bottom: 120vh;
 }
 
 .intro, .outro {

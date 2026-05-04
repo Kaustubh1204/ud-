@@ -69,9 +69,9 @@ export default function Card() {
       ScrollTrigger.create({
         trigger: containerRef.current,
         start: "top top",
-        end: () => `+=${containerRef.current!.offsetHeight * 2}px`, 
+        end: () => `+=${window.innerHeight * 1.2}px`, 
         pin: true,
-        pinSpacing: true,
+        pinSpacing: false,
         scrub: 1,
         invalidateOnRefresh: true,
         onUpdate: (self) => {

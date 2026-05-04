@@ -1,4 +1,5 @@
 import HeroSection from "@/components/HeroSection/HeroSection";
+import TechMarquee from "@/components/TechMarquee/TechMarquee";
 import Card from "@/components/Card/Card";
 import { Component as ParallaxScrollSection } from "@/components/ui/parallax-scroll-feature-section";
 import { FeaturedSpotlight } from "@/components/ui/feature-spotlight";

@@ -29,10 +29,10 @@ export default function LandingReveal() {
       const cardWidth = isMobile ? 280 : (viewportWidth < 1024 ? 320 : 380);
       
       if (isMobile) {
-        // Vertical stack for phone
+        // Vertical stack for phone - Starter at bottom, Pro at top
         return {
           x: [0, 0],
-          y: [-220, 220]
+          y: [230, -230]
         };
       }
 

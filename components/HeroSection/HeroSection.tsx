@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
 import NavBar from "../NavBar/NavBar";
-import StatsBar from "../StatsBar/StatsBar";
+import TechMarquee from "../TechMarquee/TechMarquee";
 
 const HeroSection: React.FC = () => {
   return (
@@ -55,8 +55,9 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* ── TECH STACK MARQUEE ── */}
-      <StatsBar />
+      <div className="absolute bottom-0 left-0 w-full z-10">
+        <TechMarquee />
+      </div>
     </section>
   );
 };
