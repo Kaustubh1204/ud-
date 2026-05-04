@@ -63,7 +63,7 @@ export default function LandingReveal() {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top top",
-        end: "+=2000",
+        end: () => window.innerWidth < 640 ? "+=800" : "+=1200",
         scrub: 1,
         pin: true,
         anticipatePin: 1,
