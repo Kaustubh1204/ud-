@@ -18,7 +18,7 @@ const HeroSection: React.FC = () => {
         <div className={styles.videoLayer} id="hero-video-layer" aria-hidden="true">
           <div className={styles.videoFrame}>
             <video
-              src="/hero-figure.mp4"
+              src="/Mysterious_figure_standing_still_202605041655.mp4"
               autoPlay
               muted
               loop

@@ -1,0 +1,90 @@
+/*
+  cinematic-scroll.css
+  
+  Import in your root layout.tsx or the page that uses CinematicScrollSection.
+  All class names are scoped to the .cinematic-* namespace.
+
+  Typography stack: editorial serif for statements, monospaced for eyebrow labels.
+  Swap these with your brand fonts via next/font — see usage notes below.
+*/
+
+/* ─── Eyebrow label ──────────────────────────────────────────────────────── */
+.cinematic-eyebrow {
+  font-family: "SF Mono", "Fira Code", ui-monospace, monospace;
+  font-size: 0.6875rem;          /* 11px */
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0 0 18px 0;
+  line-height: 1;
+}
+
+/* ─── Main statement ─────────────────────────────────────────────────────── */
+.cinematic-statement {
+  /* 
+    clamp(min, preferred, max):
+    - Mobile 390px: ~2.0rem
+    - Tablet 768px: ~2.8rem  
+    - Desktop 1440px: 3.75rem cap
+  */
+  font-family: "Georgia", "Times New Roman", ui-serif, serif;
+  font-size: clamp(2rem, 4.5vw, 3.75rem);
+  font-weight: 400;              /* Serif feels richer at 400 than 700 */
+  line-height: 1.12;
+  letter-spacing: -0.02em;      /* Tight tracking for display sizes */
+  color: rgba(255, 255, 255, 1);
+  margin: 0 0 20px 0;
+  max-width: 58ch;               /* Never break past 60 chars/line */
+
+  /* No text-shadow — it implies cheap. Rely on DimOverlay for contrast. */
+}
+
+/* ─── Supporting subtext ─────────────────────────────────────────────────── */
+.cinematic-subtext {
+  font-family: "Georgia", "Times New Roman", ui-serif, serif;
+  font-size: clamp(0.9rem, 1.2vw, 1.125rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.58);
+  margin: 0;
+  max-width: 46ch;
+}
+
+/* ─── Responsive overrides ───────────────────────────────────────────────── */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .cinematic-statement {
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  /* Eyebrow is hidden on small screens — reduces noise */
+  .cinematic-eyebrow {
+    display: none;
+  }
+
+  .cinematic-statement {
+    font-size: clamp(1.75rem, 5.5vw, 2.25rem);
+    line-height: 1.18;
+    letter-spacing: -0.01em;
+    /* Left-align on mobile — centered feels weak at this size */
+    text-align: left;
+    max-width: 100%;
+  }
+
+  .cinematic-subtext {
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.52);
+  }
+}
+
+/* Very small phones */
+@media (max-width: 390px) {
+  .cinematic-statement {
+    font-size: 1.625rem;
+  }
+}

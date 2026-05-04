@@ -1,11 +1,15 @@
 .section {
-  background-color: var(--bg);
+  background-color: #f8f9f4;
   display: flex;
   flex-direction: column;
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
   position: relative;
+}
+
+:global(.dark) .section {
+  background-color: #000000;
 }
 
 
@@ -17,6 +21,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 140px;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -34,16 +39,21 @@
 
 .videoFrame {
   position: relative;
-  /* Cover 85–100% of viewport height */
-  height: 95vh;
+  /* Reduced height for a more compact look */
+  height: 75vh;
   aspect-ratio: 9 / 16;
   max-width: 60vw;
-  /* Very slight offset from center for a premium layout */
-  transform: translateX(4%);
+  /* Shifted right and slightly down for a dynamic, refined look */
+  transform: translate(10%, 20%);
 
-  /* Soft radial fade mask dissolving naturally into the background */
-  -webkit-mask-image: radial-gradient(ellipse 65% 75% at 50% 50%, black 20%, rgba(0,0,0,0.5) 50%, transparent 80%);
-  mask-image: radial-gradient(ellipse 65% 75% at 50% 50%, black 20%, rgba(0,0,0,0.5) 50%, transparent 80%);
+  /* Rectangular shape with soft edge blending */
+  overflow: hidden;
+
+  /* Strong, focused oval fade effect */
+  -webkit-mask-image: 
+    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
+  mask-image: 
+    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
 }
 
 .video {
@@ -52,9 +62,25 @@
   object-fit: cover;
   object-position: center 15%;
   display: block;
-  mix-blend-mode: multiply;
-  opacity: 0.88;
-  filter: contrast(1.08) brightness(0.94);
+  mix-blend-mode: normal;
+  opacity: 1;
+  filter: none;
+  transition: all 0.3s ease;
+}
+
+:global(.dark) .videoFrame {
+  /* Strong, focused oval fade effect for dark mode */
+  -webkit-mask-image: 
+    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
+  mask-image: 
+    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
+}
+
+:global(.dark) .video {
+  mix-blend-mode: lighten;
+  opacity: 0.65;
+  filter: contrast(1.1) brightness(1) grayscale(0);
+  transition: all 0.3s ease;
 }
 
 /* ═══════════════════════════════════════════════════════
@@ -83,13 +109,14 @@
 }
 
 .brandGiant {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: clamp(60px, 8vw, 130px);
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(40px, 5vw, 64px);
   font-weight: 300;
   font-style: italic;
   letter-spacing: -0.04em;
-  color: var(--text-sec);
+  color: var(--text) !important;
   line-height: 1;
+  transform: translateX(-60px);
 }
 
 /* RIGHT SIDE: Headline & CTAs */
@@ -112,17 +139,18 @@
 
 .hLine {
   display: block;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter Tight', sans-serif;
   font-size: clamp(32px, 3.5vw, 54px);
   font-weight: 600;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  color: var(--text);
+  color: var(--text) !important;
 }
 
 .hLineLight {
+  font-family: 'Instrument Serif', serif;
   font-weight: 300;
-  color: var(--text-sec);
+  color: var(--text) !important;
   font-style: italic;
 }
 
@@ -177,8 +205,9 @@
     gap: 60px;
     padding-top: 80px;
   }
-  
-  .leftSide, .rightSide {
+
+  .leftSide,
+  .rightSide {
     flex: none;
     align-items: center;
     text-align: center;
