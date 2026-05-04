@@ -9,7 +9,7 @@ const outroCardData = [
     id: 'starter',
     title: 'Starter',
     image: '/img/8605c9db0ed95d59f952df42e3785a7d.jpg',
-    description: 'A strong starting point for businesses ready to build their digital foundation. Final pricing is decided after a detailed discussion of your goals and requirements.',
+    description: '',
     cta: 'Let’s Collaborate',
     features: [
       'Custom website or application development',
@@ -24,7 +24,7 @@ const outroCardData = [
     id: 'pro',
     title: 'Pro',
     image: '/img/8079b63abeb541f72ccd9648a7b20833.jpg',
-    description: 'Designed for growing products and complex systems that demand scalability and performance. Pricing is finalized after understanding the full scope and technical requirements.',
+    description: '',
     cta: 'Let’s Collaborate',
     features: [
       'Advanced web or mobile application',
@@ -61,7 +61,7 @@ export default function OutroCards({ containerRef }: OutroCardsProps) {
           <div className="lr-card-back">
             <div className="lr-card-back-inner">
               <h3 className="lr-card-back-title">{data.title}</h3>
-              <p className="lr-card-description">{data.description}</p>
+              {data.description && <p className="lr-card-description">{data.description}</p>}
               
               <div className="lr-card-features">
                 {data.features.map((feature, idx) => (

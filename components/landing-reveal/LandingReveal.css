@@ -31,9 +31,9 @@
 /* --- Card Base --- */
 .lr-card {
   position: absolute;
-  width: 340px;
-  height: 500px;
-  top: 55%;
+  width: 300px;
+  height: 440px;
+  top: 60%;
   left: 50%;
   transform-style: preserve-3d;
   will-change: transform;
@@ -190,8 +190,8 @@
 
 @media (max-width: 640px) {
   .lr-card {
-    width: 260px;
-    height: 420px;
+    width: 220px;
+    height: 340px;
     top: 52%;
   }
   .lr-card-back {

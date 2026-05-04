@@ -26,13 +26,13 @@ export default function LandingReveal() {
     const getOutroPositions = () => {
       const isMobile = window.innerWidth < 640;
       const viewportWidth = window.innerWidth;
-      const cardWidth = isMobile ? 280 : (viewportWidth < 1024 ? 320 : 380);
+      const cardWidth = isMobile ? 220 : (viewportWidth < 1024 ? 320 : 380);
       
       if (isMobile) {
-        // Vertical stack for phone - Starter at bottom, Pro at top
+        // Vertical stack for phone - Starter at top, Pro at bottom - clear gap
         return {
           x: [0, 0],
-          y: [230, -230]
+          y: [-220, 220]
         };
       }
 
