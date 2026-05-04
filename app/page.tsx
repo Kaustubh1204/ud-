@@ -1,13 +1,13 @@
-import HeroSection from "./components/HeroSection/HeroSection";
-import Card from "./components/Card/Card";
+import HeroSection from "@/components/HeroSection/HeroSection";
+import Card from "@/components/Card/Card";
 import { Component as ParallaxScrollSection } from "@/components/ui/parallax-scroll-feature-section";
 import { FeaturedSpotlight } from "@/components/ui/feature-spotlight";
-import LandingReveal from "@/uwu/components/landing-reveal/LandingReveal";
-import FAQSection from "./components/FAQSection";
-import Footer from "./components/Footer/Footer";
+import LandingReveal from "@/components/landing-reveal/LandingReveal";
+import FAQSection from "@/components/FAQSection";
+import Footer from "@/components/Footer/Footer";
 import TextBlockAnimation from "@/components/ui/text-block-animation";
 import ParallaxHeading from "@/components/ui/parallax-heading";
-import "@/uwu/components/LandingReveal.css";
+import "@/components/landing-reveal/LandingReveal.css";
 
 
 

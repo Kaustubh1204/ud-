@@ -1,0 +1,224 @@
+.section {
+  background-color: #f8f9f4;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  position: relative;
+}
+
+:global(.dark) .section {
+  background-color: #000000;
+}
+
+
+
+/* ── CANVAS ── full-height stage */
+.canvas {
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 140px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   VIDEO LAYER — centered, seamless blend
+═══════════════════════════════════════════════════════ */
+.videoLayer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.videoFrame {
+  position: relative;
+  /* Reduced height for a more compact look */
+  height: 75vh;
+  aspect-ratio: 9 / 16;
+  max-width: 60vw;
+  /* Shifted right and slightly down for a dynamic, refined look */
+  transform: translate(10%, 20%);
+
+  /* Rectangular shape with soft edge blending */
+  overflow: hidden;
+
+  /* Strong, focused oval fade effect */
+  -webkit-mask-image: 
+    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
+  mask-image: 
+    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  display: block;
+  mix-blend-mode: normal;
+  opacity: 1;
+  filter: none;
+  transition: all 0.3s ease;
+}
+
+:global(.dark) .videoFrame {
+  /* Strong, focused oval fade effect for dark mode */
+  -webkit-mask-image: 
+    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
+  mask-image: 
+    radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
+}
+
+:global(.dark) .video {
+  mix-blend-mode: lighten;
+  opacity: 0.65;
+  filter: contrast(1.1) brightness(1) grayscale(0);
+  transition: all 0.3s ease;
+}
+
+/* ═══════════════════════════════════════════════════════
+   CONTENT LAYER — split left/right, sits above video
+═══════════════════════════════════════════════════════ */
+.contentLayer {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--pad-h);
+  max-width: var(--max-w);
+  margin: 0 auto;
+  width: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* LEFT SIDE: Brand */
+.leftSide {
+  pointer-events: all;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.brandGiant {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  color: var(--text) !important;
+  line-height: 1;
+  transform: translateX(-60px);
+}
+
+/* RIGHT SIDE: Headline & CTAs */
+.rightSide {
+  pointer-events: all;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+  max-width: 480px;
+}
+
+.headline {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 32px;
+}
+
+.hLine {
+  display: block;
+  font-family: 'Inter Tight', sans-serif;
+  font-size: clamp(32px, 3.5vw, 54px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--text) !important;
+}
+
+.hLineLight {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 300;
+  color: var(--text) !important;
+  font-style: italic;
+}
+
+/* CTAS */
+.ctas {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.ctaPrimary,
+.ctaGhost {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 13px 26px;
+  transition: all 200ms ease;
+  white-space: nowrap;
+}
+
+.ctaPrimary {
+  background-color: var(--text);
+  color: var(--bg);
+  border: 1px solid var(--text);
+}
+
+.ctaPrimary:hover {
+  background-color: #2a2a28;
+  border-color: #2a2a28;
+}
+
+.ctaGhost {
+  background-color: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-sub);
+}
+
+.ctaGhost:hover {
+  border-color: var(--text);
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .contentLayer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+    padding-top: 80px;
+  }
+
+  .leftSide,
+  .rightSide {
+    flex: none;
+    align-items: center;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .brandGiant {
+    font-size: clamp(48px, 10vw, 80px);
+  }
+
+  .ctas {
+    justify-content: center;
+  }
+}
