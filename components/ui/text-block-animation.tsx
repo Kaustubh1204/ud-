@@ -36,7 +36,8 @@ export default function TextBlockAnimation({
         
         const lines = split.lines
         
-        lines.forEach((line: HTMLElement) => {
+        lines.forEach((el: Element) => {
+            const line = el as HTMLElement
             gsap.set(line, { overflow: "hidden" })
             const content = line.innerHTML
             line.innerHTML = `<div class="line-inner" style="display: block;">${content}</div>`
