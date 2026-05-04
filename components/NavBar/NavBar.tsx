@@ -49,26 +49,41 @@ const NavBar: React.FC = () => {
       aria-label="Main navigation"
     >
       <div className={styles.inner}>
-        <div className={styles.brand}>
-          Design. Development. Growth. All under one roof.
-        </div>
-        <ul className={styles.links} role="list">
-          {!isContactPage && <li><a href="/" className={styles.link} id="nav-home">Home</a></li>}
-          <li><a href="/#work"     className={styles.link} id="nav-work">Work</a></li>
-          <li><a href="/#services" className={styles.link} id="nav-services">Services</a></li>
-          <li>
-            <a
-              href={isContactPage ? "/" : "/contact"}
-              className={`${styles.link} ${styles.linkContact}`}
-              id={isContactPage ? "nav-home-btn" : "nav-contact"}
-            >
-              {isContactPage ? "Home" : "Contact"}
-            </a>
-          </li>
-          <li className="ml-4 flex items-center">
+        <div className={styles.pillContainer}>
+          <ul className={styles.links} role="list">
+            {!isContactPage && (
+              <li>
+                <a 
+                  href="/" 
+                  className={styles.link} 
+                  id="nav-home"
+                  onClick={(e) => {
+                    if (window.location.pathname === '/') {
+                      e.preventDefault();
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  Home
+                </a>
+              </li>
+            )}
+            <li><a href="/#work"     className={styles.link} id="nav-work">Work</a></li>
+            <li><a href="/#services" className={styles.link} id="nav-services">Services</a></li>
+            <li>
+              <a
+                href={isContactPage ? "/" : "/contact"}
+                className={`${styles.link} ${styles.linkContact}`}
+                id={isContactPage ? "nav-home-btn" : "nav-contact"}
+              >
+                {isContactPage ? "Home" : "Contact"}
+              </a>
+            </li>
+          </ul>
+          <div className={styles.themeToggleWrap}>
             <ThemeToggle />
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </nav>
   );

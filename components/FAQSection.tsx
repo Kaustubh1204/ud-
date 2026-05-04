@@ -42,7 +42,10 @@ export default function FAQSection() {
           <span className="text-[13px] font-medium uppercase tracking-[0.12em] text-[var(--text-muted)]">
             Support
           </span>
-          <h2 className="text-[22px] md:text-[28px] font-medium text-[var(--text)] mt-3">
+          <h2 
+            className="text-[32px] md:text-[42px] font-light italic text-[var(--text)] mt-3"
+            style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.03em" }}
+          >
             Frequently asked questions
           </h2>
           <p className="text-[16px] text-[var(--text-sec)] mt-2">

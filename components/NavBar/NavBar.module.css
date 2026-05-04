@@ -20,26 +20,22 @@
 .inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 32px var(--pad-h);
+  justify-content: center;
+  padding: 20px var(--pad-h);
   max-width: var(--max-w);
   margin: 0 auto;
 }
 
-/* BRAND */
-.brand {
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  text-decoration: none;
-  pointer-events: none;
-}
-
-.brand:hover {
-  opacity: 0.6;
+.pillContainer {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background-color: transparent;
+  backdrop-filter: blur(16px);
+  padding: 10px 36px;
+  border-radius: 100px;
+  border: 1px solid var(--border-sub);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
 }
 
 /* NAV LINKS */
@@ -47,17 +43,18 @@
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 28px;
 }
 
 .link {
   font-family: 'Inter', sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  letter-spacing: 0.04em;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
   color: var(--text-sec);
   text-decoration: none;
   transition: color 180ms ease;
+  white-space: nowrap;
 }
 
 .link:hover {
@@ -69,14 +66,30 @@
   font-weight: 500;
 }
 
+.themeToggleWrap {
+  border-left: 1px solid var(--border-sub);
+  padding-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
 /* MOBILE */
 @media (max-width: 640px) {
   .inner {
-    padding: 24px var(--pad-h);
+    padding: 16px var(--pad-h);
+  }
+
+  .pillContainer {
+    padding: 8px 20px;
+    gap: 16px;
   }
 
   .links {
-    gap: 20px;
+    gap: 16px;
+  }
+
+  .link {
+    font-size: 12px;
   }
 
   .link:not(.linkContact) {

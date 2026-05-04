@@ -116,7 +116,10 @@ export function FeaturedSpotlight() {
 
                 {/* Title/Quote */}
                 <h2 className="relative">
-                  <span className="block text-4xl font-normal tracking-tight text-foreground sm:text-5xl md:text-5xl lg:text-6xl transition-transform duration-500 group-hover:-translate-y-1 will-change-transform">
+                  <span 
+                    className="block text-4xl font-light italic text-foreground sm:text-5xl md:text-5xl lg:text-6xl transition-transform duration-500 group-hover:-translate-y-1 will-change-transform"
+                    style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
+                  >
                     {slide.title}
                   </span>
                   <span className="mt-2 block text-sm font-light text-muted-foreground/80 md:text-base lg:text-lg">

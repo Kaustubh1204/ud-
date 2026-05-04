@@ -34,7 +34,7 @@ const HeroSection: React.FC = () => {
           
           {/* LEFT: Brand */}
           <div className={`${styles.leftSide} anim-slide-up d-250`}>
-            <h1 className={styles.brandGiant}>UsualDev</h1>
+            <h1 className={styles.brandGiant}>Usualdev</h1>
           </div>
 
           {/* RIGHT: Headline & CTA */}

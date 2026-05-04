@@ -118,7 +118,10 @@ const ServiceSection = ({ service }: { service: any }) => {
         <span className="text-xs font-medium uppercase tracking-[0.3em] text-muted-foreground mb-4">
           {service.subtitle}
         </span>
-        <h2 className="text-4xl md:text-6xl font-bold leading-tight tracking-tight text-foreground">
+        <h2 
+          className="text-4xl md:text-6xl font-light italic leading-tight text-foreground"
+          style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
+        >
           {service.title}
         </h2>
         <p className="text-muted-foreground text-lg mt-6 max-w-md leading-relaxed">

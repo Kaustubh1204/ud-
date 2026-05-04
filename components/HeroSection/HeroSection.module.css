@@ -69,11 +69,15 @@
 }
 
 :global(.dark) .videoFrame {
-  /* Strong, focused oval fade effect for dark mode */
+  /* Strong, focused oval fade effect for dark mode with extra top fade */
   -webkit-mask-image: 
+    linear-gradient(to bottom, transparent, black 15%),
     radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
   mask-image: 
+    linear-gradient(to bottom, transparent, black 15%),
     radial-gradient(ellipse 60% 75% at 50% 50%, black 10%, rgba(0, 0, 0, 0.4) 40%, transparent 80%);
+  -webkit-mask-composite: source-in;
+  mask-composite: intersect;
 }
 
 :global(.dark) .video {
@@ -139,11 +143,12 @@
 
 .hLine {
   display: block;
-  font-family: 'Inter Tight', sans-serif;
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
   font-size: clamp(32px, 3.5vw, 54px);
-  font-weight: 600;
+  font-weight: 300;
   line-height: 1.05;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.04em;
   color: var(--text) !important;
 }
 

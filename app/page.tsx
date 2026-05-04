@@ -25,7 +25,10 @@ export default function Home() {
             What we do
           </p>
           <TextBlockAnimation duration={1.5} stagger={0.1}>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-[var(--text)] leading-[0.95] max-w-5xl mx-auto">
+            <h2 
+              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-5xl mx-auto"
+              style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
+            >
               Crafting exceptional, insight-driven and technology-powered strategies to create measurable impact
             </h2>
           </TextBlockAnimation>
@@ -62,7 +65,10 @@ export default function Home() {
             Case Study
           </p>
           <TextBlockAnimation duration={1.2} stagger={0.09}>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-[var(--text)] leading-[0.95] max-w-4xl mx-auto">
+            <h2 
+              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-4xl mx-auto"
+              style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
+            >
               How we transformed a small business's online presence
             </h2>
           </TextBlockAnimation>
@@ -79,7 +85,10 @@ export default function Home() {
             Testimonials
           </p>
           <TextBlockAnimation duration={1.2} stagger={0.08}>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-[var(--text)] leading-[0.95] max-w-4xl mx-auto">
+            <h2 
+              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-4xl mx-auto"
+              style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
+            >
               What our satisfied customers are saying about us
             </h2>
           </TextBlockAnimation>
@@ -96,7 +105,10 @@ export default function Home() {
             Pricing
           </p>
           <TextBlockAnimation duration={1.2} stagger={0.08}>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-[var(--text)] leading-[0.95] max-w-3xl mx-auto">
+            <h2 
+              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-3xl mx-auto"
+              style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
+            >
               Pick the plan that fits your start-up
             </h2>
           </TextBlockAnimation>
@@ -111,7 +123,10 @@ export default function Home() {
             FAQ
           </p>
           <TextBlockAnimation duration={1.2} stagger={0.08}>
-            <h2 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter text-[var(--text)] leading-[0.95] max-w-2xl mx-auto">
+            <h2 
+              className="text-5xl md:text-7xl lg:text-8xl font-light italic text-[var(--text)] leading-[0.95] max-w-2xl mx-auto"
+              style={{ fontFamily: "'Instrument Serif', serif", letterSpacing: "-0.04em" }}
+            >
               Got questions? We've got answers
             </h2>
           </TextBlockAnimation>
